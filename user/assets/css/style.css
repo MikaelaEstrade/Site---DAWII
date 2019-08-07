@@ -1,0 +1,179 @@
+/*  --------- FORMATO GERAL ------------ */
+body{
+    font-family: Trebuchet MS, sans-serif; 
+    margin: auto;
+    text-align: center}
+
+h2{
+    padding-top:25px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BOTÕES */
+.button {
+    margin: 0 auto;
+    border-radius: 4px;
+    border: none;
+    background-color: yellow;
+    text-align: center;
+    padding: 20px;
+    left: 50%;
+    margin-right: -50%;
+    width: 150px;
+    margin: 5px; 
+    margin-bottom: 20px;}
+    
+/*  ---------  TOPO DA PÁGINA ------------ */
+
+#tp{
+    background-color:black;
+}
+
+ul.menu{
+    text-align: center;
+    background-color:black;
+    height: 45px;}
+
+ul.menu li{
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;}
+    
+ul.menu li a{
+    text-decoration: none;
+    color:white;}
+
+ul.menu li a:hover{
+    color: yellow;}
+
+/* MENU SCROLL */
+.menu_mluv_retratil {
+    width: 100%; 
+    height: 65px;
+    display: block;
+    background: black;
+    position: fixed;
+    top: -65px;
+    z-index: 100;
+    -webkit-transition:All 0.5s ease;
+    -moz-transition:All 0.5s ease;
+    -o-transition:All 0.5s ease;}
+
+.menu_mluv_retratil.mostrar {
+    top: 0; 
+    position: fixed;}
+
+.menu_mluv_retratil nav {
+    margin: 0 20px; 
+    padding: 0; 
+    list-style: none;
+    float: left}
+
+.menu_mluv_retratil nav a {
+    line-height: 65px; 
+    color: white; 
+    text-transform: uppercase;
+    padding: 0 10px; 
+    text-decoration: none; }
+
+.menu_mluv_retratil nav a:hover {
+    color: yellow;}
+
+.menu_mluv_retratil nav a img{
+    margin-top:10px;
+    float: left;}
+
+/* -------------- SERVIÇOS -------------- */
+.row div{ 
+    margin: 50px; }
+
+#containerservices{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%
+}
+
+.itemservice{
+    width: 55%;
+    margin-left: 22%;
+    margin-right: 22%;
+    text-align: justify;
+    margin-bottom: 25px; }
+
+/* -------------- PORTFÓLIO -------------- */
+#portfolio{
+    background-color: #DCDCDC;
+}
+
+#pt {
+    background-color: #DCDCDC;}
+
+.row img{
+    margin: 20px;}
+
+/* --------------  CONTATO -------------- */
+
+#fc{
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 35px; }
+
+.areaform{
+    width: 55%;
+    margin-left: 22%;
+    margin-right: 22%;
+    text-align: left;}
+
+.areaform input, textarea {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px; }
+
+
+/* --------------  CURRICULO -------------- */
+
+#curriculo{
+    width: 55%;
+    margin-left: 22%;
+    margin-right: 22%;}
+
+#imgcurriculo{
+    float: right;
+    margin-right: 40px; }
+
+.itemcurriculo{
+    text-align: justify;
+    margin-bottom: 25px; }
+
+/* --------------   footer -------------- */
+
+footer {
+    width: 100%;
+    height: 200px;
+    display: block;
+    background-color: black;
+    position: absolute;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    margin-top: 30px;}
+
+footer img{
+    margin-top: 30px;
+    margin-left: 200px;
+    width: 200px;
+    float: left;
+}
+
+footer p{
+    float: right;
+    margin: 20px;
+}
