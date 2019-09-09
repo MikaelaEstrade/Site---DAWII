@@ -7,7 +7,10 @@ img {
     margin-left: 30%;
 }
 
-
+a{ 
+    text-decoration: none;
+    color:white;
+}
 /*formulário login*/
 #formlogin {
     width: 100%;
