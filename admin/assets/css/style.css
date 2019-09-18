@@ -75,6 +75,24 @@ button {
     padding-top: 5%;
 }
 
+#direita{
+    float:right;
+    margin-right: 200px;
+    margin-bottom: 40px;
+}
+
+.areahome{
+    width: 98%;
+    height: 16%;
+    margin-right: 20%;
+    margin-top: 20px;
+    text-align: justify;
+    margin-bottom: 0px;
+    border-width: 1px;
+    border-color: #000;
+    border-style: solid;
+    padding: 10px 10px 10px 10px;
+}
 /* -------------- PORTFÓLIO -------------- */
 .row img{
     margin: 20px;}
