@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Out-2019 às 17:58
--- Versão do servidor: 10.3.15-MariaDB
--- versão do PHP: 7.3.6
+-- Generation Time: Nov 10, 2019 at 06:31 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,17 +19,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `markaela`
+-- Database: `markaela`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `curriculo`
+-- Table structure for table `curriculo`
 --
 
 CREATE TABLE `curriculo` (
-  `id_curriculo` int(11) NOT NULL,
+  `id_curriculo` bigint(20) UNSIGNED NOT NULL,
   `titulo` text NOT NULL,
   `atributo` text NOT NULL,
   `conteudo` text NOT NULL
@@ -38,7 +38,7 @@ CREATE TABLE `curriculo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imagens`
+-- Table structure for table `imagens`
 --
 
 CREATE TABLE `imagens` (
@@ -50,7 +50,7 @@ CREATE TABLE `imagens` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mensagem`
+-- Table structure for table `mensagem`
 --
 
 CREATE TABLE `mensagem` (
@@ -63,11 +63,11 @@ CREATE TABLE `mensagem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `servico`
+-- Table structure for table `servico`
 --
 
 CREATE TABLE `servico` (
-  `id_servico` int(11) NOT NULL,
+  `id_servico` bigint(20) UNSIGNED NOT NULL,
   `titulo` text NOT NULL,
   `descricao` text NOT NULL,
   `iconservico` text NOT NULL
@@ -76,66 +76,91 @@ CREATE TABLE `servico` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome` text NOT NULL,
   `senha` text NOT NULL,
-  `email` text NOT NULL,
-  `telefone` text NOT NULL
+  `email` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Índices para tabelas despejadas
+-- Dumping data for table `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `senha`, `email`) VALUES
+(1, 'Mika', 'mk123', 'mk@mk.com'),
+(3, 'Mika', 'mk123', 'mk@mk.com');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `curriculo`
+-- Indexes for table `curriculo`
 --
 ALTER TABLE `curriculo`
   ADD PRIMARY KEY (`id_curriculo`);
 
 --
--- Índices para tabela `imagens`
+-- Indexes for table `imagens`
 --
 ALTER TABLE `imagens`
   ADD PRIMARY KEY (`id_imagem`);
 
 --
--- Índices para tabela `mensagem`
+-- Indexes for table `mensagem`
 --
 ALTER TABLE `mensagem`
   ADD PRIMARY KEY (`id_mensagem`);
 
 --
--- Índices para tabela `servico`
+-- Indexes for table `servico`
 --
 ALTER TABLE `servico`
   ADD PRIMARY KEY (`id_servico`);
 
 --
--- Índices para tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `imagens`
+-- AUTO_INCREMENT for table `curriculo`
+--
+ALTER TABLE `curriculo`
+  MODIFY `id_curriculo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `imagens`
 --
 ALTER TABLE `imagens`
   MODIFY `id_imagem` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `mensagem`
+-- AUTO_INCREMENT for table `mensagem`
 --
 ALTER TABLE `mensagem`
   MODIFY `id_mensagem` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `servico`
+--
+ALTER TABLE `servico`
+  MODIFY `id_servico` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

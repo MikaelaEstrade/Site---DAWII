@@ -15,11 +15,11 @@
     </header>
     <section id="formlogin">
         <div class="formlogin">
-            <form class="form-inline" action="login-ok.php">
+            <form class="form-inline" action="login-ok.php" method="POST">
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" placeholder="Enter email" name="email">
                 <label for="pwd">Senha:</label>
-                <input type="password" id="pwd" placeholder="Enter password" name="pswd">
+                <input type="password" id="pwd" placeholder="Enter password" name="password">
                 <button type="submit">Submit</button>
             </form>
         </div>

@@ -13,7 +13,7 @@ if (isset($_POST['password']) && isset($_POST['email'])
     if($login){
         header('Location:home.php');
     } else {
-        header('Location:index.php');
+        header('Location:login.php');
     }
     
 } else {
