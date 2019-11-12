@@ -1,18 +1,12 @@
-<?php
+<?php 
 include_once 'classes/autoload.php';
 
 Login::checkAuth();
-//Verifica se veio tudo preenchido do formulário
-if (isset($_GET['id']) && $_GET['id'] != "") {
 
-    $usuario = new Usuario();
-    $usuario->setId($_GET['id']);
-
-    $usuarioDao = new UsuarioDao();
-    $userData = $usuarioDao->selectById($usuario);
-    
-}
+$servicoDao = new ServicoDao();
+$lista = $servicoDao->select();
 ?>
+
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -30,44 +24,37 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
                 <li style="float:right"><a class="active" href="minhaconta.html">Minha conta</a></li>
             </ul>
         </nav>
-
+        
         <nav id="vertical"> 
             <ul>
-                <li><a  href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a class="active" href="servicos.html">Serviços</a></li>
                 <li><a href="curriculo.html">Currículo</a></li>
                 <li><a href="mensagens.html">Mensagens</a></li>
             </ul>
         </nav>
     </header> 
-        
     <section id="content">
-        
-        <h2> Informações </h2>
-          <div class="itemcurriculo">
-            <h3> Nome: </h3>
-              <p>"<?php echo $userData->getNome(); ?>"</p>
-        </div>        
-        
-        <div class="itemcurriculo">
-            <h3> E-mail: </h3>
-            <p>"<?php echo $userData->getEmail(); ?>"</p>
-        </div>        
-        
-        <div class="itemcurriculo">
-            <h3> Senha: </h3>
-            <p> "<?php echo $userData->getSenha(); ?>" </p>
+
+        <h3> SERVIÇOS </h3>
+        <a href="servico-cadastra.php"><button> Novo serviço </button></a>
+        <div class="container">
+
+            <?php foreach($lista as $serv): ?>
+            <div class="item">
+                <h3><?php echo $serv->getTitulo(); ?></h3>
+                <p><?php echo $serv->getSubtitulo(); ?></p>
+                <button onclick="window.location='servico-edita.php?id=<?php echo $serv->getId(); ?>';"> Editar </button>
+                <button onclick="confirm('Deseja exclir este registro?') ? window.location='servico-deleta-ok.php?id=<?php echo $serv->getId(); ?>' : stop = false;">Excluir</button>
+            </div>
+            <?php endforeach; ?> 
+
         </div>
-        
-        <a href="editarconta.php"><button class="button"> Editar informações </button></a>
-        <button onclick="alert()">Excluir conta</button>
-        </section>
+    </section>
 
     <footer>
         
-        </footer>
+    </footer>
     </body>
-</html>
-
-        
+    </html>

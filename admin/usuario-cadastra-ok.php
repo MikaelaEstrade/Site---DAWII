@@ -15,6 +15,8 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
     $usuarioDao->insert($usuario);
 }
 ?>
+
+
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -27,16 +29,19 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
     <header>
         <nav id="horizontal">
             <ul>
-                <li><a href="index.html"><img src="assets/img/logo.png" width="150x"> </a></li>
-                <li style="float:right"><a class="active" href="index.php">Sair</a></li>
+                <li><a href="login.php"><img src="assets/img/logo.png" width="150x"> </a></li>
             </ul>
         </nav>
-
     </header> 
+        
     <section id="content">
-        <h2>Conta cadastrada com sucesso!</h2>
+        
+        <h2> Sucesso ao cadastrar! </h2>
+
+    </section>
+
     <footer>
         
     </footer>
     </body>
-    </html>
+</html>

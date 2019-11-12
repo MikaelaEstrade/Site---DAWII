@@ -2,21 +2,6 @@
 include_once 'classes/autoload.php';
 
 Login::checkAuth();
-
-//Verifica se veio tudo preenchido do formulário
-if (isset($_POST['nome']) && $_POST['nome'] != "" 
-        && isset($_POST['senha']) && $_POST['senha'] != ""
-        && isset($_POST['email']) && $_POST['email'] != "") {
-
-    $usuario = new Usuario();
-    $usuario->setId($_POST['id']);
-    $usuario->setNome($_POST['nome']);
-    $usuario->setSenha($_POST['senha']);
-    $usuario->setEmail($_POST['email']);
-
-    $usuarioDao = new UsuarioDao();
-    $usuarioDao->update($usuario);
-}
 ?>
 
 <html>
@@ -41,7 +26,7 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a  class="active" href="servicos.html">Serviços</a></li>
                 <li><a href="curriculo.html">Currículo</a></li>
                 <li><a href="mensagens.html">Mensagens</a></li>
             </ul>
@@ -49,13 +34,33 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
     </header> 
         
     <section id="content">
-        
-        <h2> Alterações feitas com sucesso! </h2>
-        
-    </section>
+    <h2> Serviços </h2>
+            <div id="form">
+                    <h3> Inserir novo serviço:  </h3>
+                    <div class="areaform">
+                        <form action="servico-cadastra-ok.php" method="POST" enctype="multipart/form-data">
 
+                            <label for="titulo">Titulo:</label>
+                            <input placeholder="Titulo" name="titulo" required="true">
+
+                            <label for="subtitulo">Subtitulo:</label>
+                            <input type="text" placeholder="Subtitulo" name="subtitulo" required="true">
+
+                            <label for="descricao">Descrição:</label>
+                            <input placeholder="Descrição" name="descricao" required="true">
+
+                            <label for="imagem">Imagem:</label>
+                            <input type="file" placeholder="Imagem" name="imagem" required="true">
+
+                         <button class="button" type="submit">Confirmar</button>
+                        </form>
+                    </div>
+                 </section>
+            </div>
+    
+        </section>
     <footer>
         
     </footer>
-    </body>
+</body>
 </html>

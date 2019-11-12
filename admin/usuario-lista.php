@@ -1,23 +1,12 @@
-<?php
+<?php 
 include_once 'classes/autoload.php';
 
 Login::checkAuth();
 
-//Verifica se veio tudo preenchido do formulário
-if (isset($_POST['nome']) && $_POST['nome'] != "" 
-        && isset($_POST['senha']) && $_POST['senha'] != ""
-        && isset($_POST['email']) && $_POST['email'] != "") {
-
-    $usuario = new Usuario();
-    $usuario->setId($_POST['id']);
-    $usuario->setNome($_POST['nome']);
-    $usuario->setSenha($_POST['senha']);
-    $usuario->setEmail($_POST['email']);
-
-    $usuarioDao = new UsuarioDao();
-    $usuarioDao->update($usuario);
-}
+$usuarioDao = new UsuarioDao();
+$lista = $usuarioDao->select();
 ?>
+
 
 <html>
     <head><title> MARKAELA </title>
@@ -50,7 +39,30 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
         
     <section id="content">
         
-        <h2> Alterações feitas com sucesso! </h2>
+       <h2>Administradores:</h2>
+        <p>Lista dos administradores do sistema:</p>
+        <button type="button" onclick="window.location='usuario-cadastra.php'">Novo administrador</button>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+          </tr>
+
+            <?php foreach($lista as $usario): ?>
+            <tr>
+                <td><?php echo $usario->getId(); ?></td>
+                <td><?php echo $usario->getNome(); ?></td>
+                <td><?php echo $usario->getEmail(); ?></td>
+                <td>
+                    <button type="button" onclick="window.location='usuario-edita.php?id=<?php echo $usario->getId(); ?>';"> Editar </button>
+                    <button type="button" onclick="confirm('Deseja exclir este registro?') ? window.location='usuario-deleta-ok.php?id=<?php echo $usario->getId(); ?>' : stop = false;">Deletar</button>
+                </td>
+            </tr>
+            <?php endforeach; ?> 
+        </table>
+
         
     </section>
 

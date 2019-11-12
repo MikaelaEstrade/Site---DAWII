@@ -4,18 +4,15 @@ include_once 'classes/autoload.php';
 Login::checkAuth();
 
 //Verifica se veio tudo preenchido do formulário
-if (isset($_POST['nome']) && $_POST['nome'] != "" 
-        && isset($_POST['senha']) && $_POST['senha'] != ""
-        && isset($_POST['email']) && $_POST['email'] != "") {
+if (isset($_GET['id']) && $_GET['id'] != "") {
 
-    $usuario = new Usuario();
-    $usuario->setId($_POST['id']);
-    $usuario->setNome($_POST['nome']);
-    $usuario->setSenha($_POST['senha']);
-    $usuario->setEmail($_POST['email']);
+    $servico = new Servico();
+    $servico->setId($_GET['id']);
 
-    $usuarioDao = new UsuarioDao();
-    $usuarioDao->update($usuario);
+    $servicoDao = new ServicoDao();
+    $servicoDao->delete($servico);
+    
+    header( "Refresh:5; url=servico-lista.php", true, 303);
 }
 ?>
 
@@ -41,7 +38,7 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="servicos.html" class="active">Serviços</a></li>
                 <li><a href="curriculo.html">Currículo</a></li>
                 <li><a href="mensagens.html">Mensagens</a></li>
             </ul>
@@ -50,7 +47,7 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
         
     <section id="content">
         
-        <h2> Alterações feitas com sucesso! </h2>
+        <h2> Deletado com sucesso! </h2>
         
     </section>
 

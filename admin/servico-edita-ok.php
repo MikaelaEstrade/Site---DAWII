@@ -4,18 +4,18 @@ include_once 'classes/autoload.php';
 Login::checkAuth();
 
 //Verifica se veio tudo preenchido do formulário
-if (isset($_POST['nome']) && $_POST['nome'] != "" 
-        && isset($_POST['senha']) && $_POST['senha'] != ""
-        && isset($_POST['email']) && $_POST['email'] != "") {
+if (isset($_POST['titulo']) && $_POST['titulo'] != "" 
+        && isset($_POST['subtitulo']) && $_POST['subtitulo'] != ""
+        && isset($_POST['descricao']) && $_POST['descricao'] != ""){
 
-    $usuario = new Usuario();
-    $usuario->setId($_POST['id']);
-    $usuario->setNome($_POST['nome']);
-    $usuario->setSenha($_POST['senha']);
-    $usuario->setEmail($_POST['email']);
+    $servico = new Servico();
+    $servico->setId($_POST['id']);
+    $servico->setTitulo($_POST['titulo']);
+    $servico->setSubtitulo($_POST['subtitulo']);
+    $servico->setDescricao($_POST['descricao']);
 
-    $usuarioDao = new UsuarioDao();
-    $usuarioDao->update($usuario);
+    $servicoDao = new ServicoDao();
+    $servicoDao->update($servico);
 }
 ?>
 
@@ -41,7 +41,7 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="servicos.html" class="active">Serviços</a></li>
                 <li><a href="curriculo.html">Currículo</a></li>
                 <li><a href="mensagens.html">Mensagens</a></li>
             </ul>

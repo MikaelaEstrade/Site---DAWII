@@ -32,7 +32,5 @@ class Login extends Db {
         }else {
             return false;
         }
-
     }
 }
-

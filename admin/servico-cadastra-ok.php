@@ -4,18 +4,27 @@ include_once 'classes/autoload.php';
 Login::checkAuth();
 
 //Verifica se veio tudo preenchido do formulário
-if (isset($_POST['nome']) && $_POST['nome'] != "" 
-        && isset($_POST['senha']) && $_POST['senha'] != ""
-        && isset($_POST['email']) && $_POST['email'] != "") {
+if (isset($_POST['titulo']) && $_POST['titulo'] != "" 
+        && isset($_POST['subtitulo']) && $_POST['subtitulo'] != ""
+        && isset($_POST['descricao']) && $_POST['descricao'] != "") {
 
-    $usuario = new Usuario();
-    $usuario->setId($_POST['id']);
-    $usuario->setNome($_POST['nome']);
-    $usuario->setSenha($_POST['senha']);
-    $usuario->setEmail($_POST['email']);
+    $nomeimagem = $_FILES["imagem"]["name"];
+    $nometemporario = $_FILES["imagem"]["tmp_name"];
+    $diretorio = "assets/img/icone/".$nomeimagem;
 
-    $usuarioDao = new UsuarioDao();
-    $usuarioDao->update($usuario);
+    if(move_uploaded_file($nometemporario,$diretorio))
+            echo "imagem enviada";
+        else
+            echo "imagem não enviada";
+
+    $servico = new Servico();
+    $servico->setTitulo($_POST['titulo']);
+    $servico->setSubtitulo($_POST['subtitulo']);
+    $servico->setDescricao($_POST['descricao']);
+    $servico->setImagem($nomeimagem);
+
+    $servicoDao = new ServicoDao();
+    $servicoDao->insert($servico);
 }
 ?>
 
@@ -41,7 +50,7 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a  class="active" href="servicos.html">Serviços</a></li>
                 <li><a href="curriculo.html">Currículo</a></li>
                 <li><a href="mensagens.html">Mensagens</a></li>
             </ul>
@@ -49,13 +58,11 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
     </header> 
         
     <section id="content">
-        
-        <h2> Alterações feitas com sucesso! </h2>
-        
-    </section>
-
+    <h2> Cadastrado com sucesso! </h2>
+    
+        </section>
     <footer>
         
     </footer>
-    </body>
+</body>
 </html>

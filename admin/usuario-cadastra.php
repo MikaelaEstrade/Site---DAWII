@@ -1,3 +1,6 @@
+<?php
+include_once 'classes/autoload.php';
+?>
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -31,10 +34,10 @@
                         <label for="senha">Senha:</label>
                         <input type="password" id="senha" name="senha" placeholder="Insira sua senha">
                         
-                        <label for="senha">Confirme sua nova senha:</label>
+                        <label for="senha">Confirme sua senha:</label>
                         <input type="password" id="senha" name="nsenha" placeholder="Confirme sua senha">
-                        
-                        <button class="button" type="submit"> Confirmar cadastro </button>
+
+                        <button class="button"> Confirmar cadastro </button>
                     </form><br><br>
                 </div>
         </div>

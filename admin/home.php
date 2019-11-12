@@ -2,8 +2,8 @@
 include_once 'classes/autoload.php';
 
 Login::checkAuth();
-?>
 
+?>
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -18,13 +18,13 @@ Login::checkAuth();
             <ul>
                 <li><a href="index.html"><img src="assets/img/logo.png" width="150x"> </a></li>
                 <li style="float:right"><a class="active" href="login.html">Sair</a></li>
-                <li style="float:right"><a class="active" href="minhaconta.html">Minha conta</a></li>
+                <li style="float:right"><a class="active" href="usuario-lista.php">Minha conta</p></li>
             </ul>
         </nav>
         
         <nav id="vertical"> 
             <ul>
-                <li><a class="active" href="index.php">Home</a></li>
+                <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="curriculo.html">Currículo</a></li>
