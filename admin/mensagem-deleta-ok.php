@@ -6,14 +6,14 @@ Login::checkAuth();
 //Verifica se veio tudo preenchido do formulário
 if (isset($_GET['id']) && $_GET['id'] != "") {
 
-    $usuario = new Usuario();
-    $usuario->setId($_GET['id']);
+    $mensagem = new Mensagem();
+    $mensagem->setId($_GET['id']);
     
 
-    $usuarioDao = new UsuarioDao();
-    $usuarioDao->delete($usuario);
+    $mensagemDao = new MensagemDao();
+    $mensagemDao->delete($usuario);
     
-    header( "Refresh:5; url=usuario-lista.php", true, 303);
+    header( "Refresh:5; url=mensagem-lista.php", true, 303);
 }
 ?>
 
