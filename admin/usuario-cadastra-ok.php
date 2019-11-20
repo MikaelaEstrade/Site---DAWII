@@ -29,7 +29,7 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
     <header>
         <nav id="horizontal">
             <ul>
-                <li><a href="login.php"><img src="assets/img/logo.png" width="150x"> </a></li>
+                <li><a href="home.php"><img src="assets/img/logo.png" width="150x"> </a></li>
             </ul>
         </nav>
     </header> 
@@ -37,6 +37,7 @@ if (isset($_POST['nome']) && $_POST['nome'] != ""
     <section id="content">
         
         <h2> Sucesso ao cadastrar! </h2>
+        <<button onclick="window.location='home.php'">Voltar</button>
 
     </section>
 

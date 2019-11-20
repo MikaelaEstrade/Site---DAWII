@@ -48,7 +48,7 @@ class MensagemDao extends Db implements InterfaceDao {
         while ($linha = $stmt->fetch()) {
             $mensagem = new Mensagem();
             $mensagem->setNome($linha['nome']);
-            $mensagem->setTelefone($linha['telefone']);
+            $mensagem->setSenha($linha['telefone']);
             $mensagem->setEmail($linha['email']);
             $mensagem->setAssunto($linha['assunto']);
             $mensagem->setTexto($linha['texto']);

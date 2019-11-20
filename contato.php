@@ -13,47 +13,50 @@
     <!-- NAVBAR SCROLL--> 
     <div class="menu_mluv_retratil">
         <nav>
-		<a href="portfolio.html">Portfólio</a>
-		<a href="servicos.html">Serviços</a>
-		<a href="curriculo.html">Currículo</a>
-		<a href="contato.html">Contato</a>
-        <a href="index.html"><img src="assets/img/logo.png" width="150px;" id="logo"/></a>
+		<a href="portfolio.php">Portfólio</a>
+		<a href="servicos.php">Serviços</a>
+		<a href="curriculo.php">Currículo</a>
+		<a href="contato.php">Contato</a>
+        <a href="index.php"><img src="assets/img/logo.png" width="150px;" id="logo"/></a>
         </nav>
     </div>
     </header>
     
     <!-- TOPO -->
     <section id="tp">
-        <a href="index.html"> <img src="assets/img/logoselo.png" height="400px;"/> </a>
+        <a href="index.php"> <img src="assets/img/logoselo.png" height="400px;"/> </a>
         <div class="menutop"> 
             <ul class="menu">
-                <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="curriculo.html">Currículo</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="portfolio.php">Portfólio</a></li>
+                <li><a href="curriculo.php">Currículo</a></li>
+                <li><a href="servicos.php">Serviços</a></li>
+                <li><a href="contato.php">Contato</a></li>
             </ul>
         </div>
     </section>
-    
     <!-- FALE CONOSCO -->
     <section id="contato">
         <h2> Entre em contato conosco: </h2>
         <div class="areaform">
-            <form> 
+            <form method="post" action="contato-ok.php"> 
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" placeholder="Insira seu nome">
 
                 <label for="email">E-mail para contato</label>
                 <input type="email" id="email" name="email" placeholder="Insira seu e-mail">
 
-                <label for="Telefone">Telefone para contato</label>
+                <label for="Telefone">Telefone para contato:</label>
                 <input type="text" id="telefone" name="telefone" placeholder="Insira seu número de telefone ou celualar">
 
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem" style="height:200px"></textarea>
+                <label for="Telefone">Assunto:</label>
+                <input type="text" id="telefone" name="assunto" placeholder="Insira seu número de telefone ou celualar">
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="texto" placeholder="Escreva sua mensagem" style="height:200px"></textarea>
+
+                <button class="button" type="submit"> Enviar mensagem </button>
             </form>
         </div>
-         <button class="button"> Enviar mensagem </button>
      </section>
     
     <footer> 

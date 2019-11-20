@@ -13,7 +13,7 @@ include_once 'classes/autoload.php';
     <header>
         <nav id="horizontal">
             <ul>
-                <li><a href="index.html"><img src="assets/img/logo.png" width="150x"> </a></li>
+                <li><a href="home.php"><img src="assets/img/logo.png" width="150x"> </a></li>
             </ul>
         </nav>
     </header> 

@@ -7,7 +7,6 @@ $usuarioDao = new UsuarioDao();
 $lista = $usuarioDao->select();
 ?>
 
-
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -20,19 +19,19 @@ $lista = $usuarioDao->select();
     <header>
         <nav id="horizontal">
             <ul>
-                <li><a href="index.html"><img src="assets/img/logo.png" width="150x"> </a></li>
-                <li style="float:right"><a class="active" href="login.html">Sair</a></li>
-                <li style="float:right"><a class="active" href="minhaconta.html">Minha conta</a></li>
+                <li><a href="home.php"><img src="assets/img/logo.png" width="150x"> </a></li>
+                <li style="float:right"><a class="active" href="login.php">Sair</a></li>
+                <li style="float:right"><a class="active" href="usuario-lista.php">Minha conta</a></li>
             </ul>
         </nav>
 
         <nav id="vertical"> 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="curriculo.html">Currículo</a></li>
-                <li><a href="mensagens.html">Mensagens</a></li>
+                 <li><a href="home.php">Home</a></li>
+                <li><a href="portfolio-lista.php">Portfólio</a></li>
+                <li><a href="servico-lista.php.">Serviços</a></li>
+                <li><a href="curriculo-lista.php">Currículo</a></li>
+                <li><a href="mensagem-lista.php">Mensagens</a></li>
             </ul>
         </nav>
     </header> 

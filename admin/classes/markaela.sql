@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2019 at 06:31 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.1.32
+-- Tempo de geração: 20-Nov-2019 às 19:04
+-- Versão do servidor: 10.3.15-MariaDB
+-- versão do PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,64 +19,89 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `markaela`
+-- Banco de dados: `markaela`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `curriculo`
+-- Estrutura da tabela `curriculo`
 --
 
 CREATE TABLE `curriculo` (
-  `id_curriculo` bigint(20) UNSIGNED NOT NULL,
-  `titulo` text NOT NULL,
-  `atributo` text NOT NULL,
-  `conteudo` text NOT NULL
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `empresa` text NOT NULL,
+  `local` text NOT NULL,
+  `funcao` text NOT NULL,
+  `periodo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `curriculo`
+--
+
+INSERT INTO `curriculo` (`id`, `empresa`, `local`, `funcao`, `periodo`) VALUES
+(1, 'S', 'S', 'S', '0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `imagens`
+-- Estrutura da tabela `mensagem`
 --
 
-CREATE TABLE `imagens` (
-  `id_imagem` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE `mensagem` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `telefone` text NOT NULL,
+  `assunto` text NOT NULL,
+  `texto` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `mensagem`
+--
+
+INSERT INTO `mensagem` (`id`, `nome`, `email`, `telefone`, `assunto`, `texto`) VALUES
+(1, 'Teste', 'mkestrade@gmail.com', '123123', '412312412', 'asdafa');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `portfolio`
+--
+
+CREATE TABLE `portfolio` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `src` varchar(200) NOT NULL,
   `descricao` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `mensagem`
+-- Extraindo dados da tabela `portfolio`
 --
 
-CREATE TABLE `mensagem` (
-  `id_mensagem` bigint(20) UNSIGNED NOT NULL,
-  `nome` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `texto` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `portfolio` (`id`, `src`, `descricao`) VALUES
+(2, 'Capturar.PNG', '12312312323123'),
+(3, 'Capturar.PNG', '123123123');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `servico`
+-- Estrutura da tabela `servico`
 --
 
 CREATE TABLE `servico` (
-  `id_servico` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `titulo` text NOT NULL,
   `descricao` text NOT NULL,
-  `iconservico` text NOT NULL
+  `imagem` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -87,80 +112,80 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `senha`, `email`) VALUES
-(1, 'Mika', 'mk123', 'mk@mk.com'),
-(3, 'Mika', 'mk123', 'mk@mk.com');
+(1, 'Mika', 'mk123', 'mk@mika.com'),
+(5, 'Admin', '123', 'admin@admin.com');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `curriculo`
+-- Índices para tabela `curriculo`
 --
 ALTER TABLE `curriculo`
-  ADD PRIMARY KEY (`id_curriculo`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `imagens`
---
-ALTER TABLE `imagens`
-  ADD PRIMARY KEY (`id_imagem`);
-
---
--- Indexes for table `mensagem`
+-- Índices para tabela `mensagem`
 --
 ALTER TABLE `mensagem`
-  ADD PRIMARY KEY (`id_mensagem`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `servico`
+-- Índices para tabela `portfolio`
+--
+ALTER TABLE `portfolio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `servico`
 --
 ALTER TABLE `servico`
-  ADD PRIMARY KEY (`id_servico`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `curriculo`
+-- AUTO_INCREMENT de tabela `curriculo`
 --
 ALTER TABLE `curriculo`
-  MODIFY `id_curriculo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `imagens`
---
-ALTER TABLE `imagens`
-  MODIFY `id_imagem` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `mensagem`
+-- AUTO_INCREMENT de tabela `mensagem`
 --
 ALTER TABLE `mensagem`
-  MODIFY `id_mensagem` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `servico`
+-- AUTO_INCREMENT de tabela `portfolio`
+--
+ALTER TABLE `portfolio`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `servico`
 --
 ALTER TABLE `servico`
-  MODIFY `id_servico` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

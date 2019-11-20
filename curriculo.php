@@ -6,35 +6,34 @@
         <link rel="sortcut icon" href="assets/img/icon.ico" type="image/x-icon"/>
         <meta charset="utf-8">
     </head>
-
+    
 <body> 
     <header>
         
     <!-- NAVBAR SCROLL--> 
     <div class="menu_mluv_retratil">
         <nav>
-		<a href="portfolio.html">Portfólio</a>
-		<a href="servicos.html">Serviços</a>
-		<a href="curriculo.html">Currículo</a>
-		<a href="contato.html">Contato</a>
-        <a href="index.html"><img src="assets/img/logo.png" width="150px;" id="logo"/></a>
+		<a href="portfolio.php">Portfólio</a>
+		<a href="servicos.php">Serviços</a>
+		<a href="curriculo.php">Currículo</a>
+		<a href="contato.php">Contato</a>
+        <a href="index.php"><img src="assets/img/logo.png" width="150px;" id="logo"/></a>
         </nav>
     </div>
     </header>
     
     <!-- TOPO -->
     <section id="tp">
-        <a href="index.html"> <img src="assets/img/logoselo.png" height="400px;"/> </a>
+        <a href="index.php"> <img src="assets/img/logoselo.png" height="400px;"/> </a>
         <div class="menutop"> 
             <ul class="menu">
-                <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="curriculo.html">Currículo</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="portfolio.php">Portfólio</a></li>
+                <li><a href="curriculo.php">Currículo</a></li>
+                <li><a href="servicos.php">Serviços</a></li>
+                <li><a href="contato.php">Contato</a></li>
             </ul>
         </div>
     </section>
-    
     <!-- CURRICULO -->
     <section id="curriculo">
         <h2> Currículo </h2>     

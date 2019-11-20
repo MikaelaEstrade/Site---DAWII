@@ -15,9 +15,10 @@ class PortfolioDao extends Db implements InterfaceDao {
     
     public function update($portfolio) {
         $stmt = $this->conexao->prepare("UPDATE {$this->table} "
-                . "SET descricao = :descricao WHERE id = :id;");
+                . "SET src=:src, descricao = :descricao WHERE id = :id;");
 
         $stmt->bindValue(':id', $portfolio->getId());
+        $stmt->bindValue(':src', $portfolio->getSrc());
         $stmt->bindValue(':descricao', $portfolio->getDescricao());
 
         return $stmt->execute();

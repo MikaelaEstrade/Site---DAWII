@@ -13,24 +13,24 @@
     <!-- NAVBAR SCROLL--> 
     <div class="menu_mluv_retratil">
         <nav>
-		<a href="portfolio.html">Portfólio</a>
-		<a href="servicos.html">Serviços</a>
-		<a href="curriculo.html">Currículo</a>
-		<a href="contato.html">Contato</a>
-        <a href="index.html"><img src="assets/img/logo.png" width="150px;" id="logo"/></a>
+		<a href="portfolio.php">Portfólio</a>
+		<a href="servicos.php">Serviços</a>
+		<a href="curriculo.php">Currículo</a>
+		<a href="contato.php">Contato</a>
+        <a href="index.php"><img src="assets/img/logo.png" width="150px;" id="logo"/></a>
         </nav>
     </div>
     </header>
     
     <!-- TOPO -->
     <section id="tp">
-        <a href="index.html"> <img src="assets/img/logoselo.png" height="400px;"/> </a>
+        <a href="index.php"> <img src="assets/img/logoselo.png" height="400px;"/> </a>
         <div class="menutop"> 
             <ul class="menu">
-                <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="curriculo.html">Currículo</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="portfolio.php">Portfólio</a></li>
+                <li><a href="curriculo.php">Currículo</a></li>
+                <li><a href="servicos.php">Serviços</a></li>
+                <li><a href="contato.php">Contato</a></li>
             </ul>
         </div>
     </section>
@@ -54,27 +54,31 @@
                 <h3> Nome serviço </h3>
                 <p> esse serviço consiste em abobrinha e cebolinha e fazer sites </p>
             </div>
+            
         </div>
-        
-        <div class="itemservice">
-            <h3>Nome serviço</h3>
-            <p> EXPLICAÇÃO EXTENSA E DETALHADA SOBRE O SERVIÇO QUE VAI SER PRESTADO JÁ QUE ISSO AQUI NÃO É UMA FEIRINHA,
-                SIM UMA MAQUINA FURIOSA DE SITES PQ A VIDA FUNCIONA ASSIM TAOKEI?</p>
-        </div>
-        <div class="itemservice">
-            <h3>Nome serviço</h3>
-            <p> EXPLICAÇÃO EXTENSA E DETALHADA SOBRE O SERVIÇO QUE VAI SER PRESTADO JÁ QUE ISSO AQUI NÃO É UMA FEIRINHA,
-                SIM UMA MAQUINA FURIOSA DE SITES PQ A VIDA FUNCIONA ASSIM TAOKEI?</p>
-        </div>
-        <div class="itemservice">
-            <h3>Nome serviço</h3>
-            <p> EXPLICAÇÃO EXTENSA E DETALHADA SOBRE O SERVIÇO QUE VAI SER PRESTADO JÁ QUE ISSO AQUI NÃO É UMA FEIRINHA,
-                SIM UMA MAQUINA FURIOSA DE SITES PQ A VIDA FUNCIONA ASSIM TAOKEI?</p>
-        </div>
+         <a href="servicos.html"> <button class="button"> Ver mais </button> </a>
     </section>
     
+    <!-- PORTFÓLIO -->
+    <section id="pt">
+        <h2> Portfólio </h2>
+        
+        <div class="row">
+            <img src="assets/img/port.png" width="200px"/>
+            <img src="assets/img/port.png" width="200px"/>
+            <img src="assets/img/port.png" width="200px"/>
+        </div> 
+        <div class="row">
+            <img src="assets/img/port.png" width="200px"/>
+            <img src="assets/img/port.png" width="200px"/>
+            <img src="assets/img/port.png" width="200px"/>
+        </div>
+
+    <!--https://codepen.io/wtricks/pen/KogvBY--> 
+         <a href="portfolio.html"> <button class="button"> Ver mais </button> </a>
+        
+    </section>
     
-    <!-- ÁREA CONTATO -->
     <section id="fc">
         <h3> Gostou do nosso trabalho? </h3>
         <p> Entre em contato conosco!</p>
