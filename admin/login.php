@@ -24,7 +24,7 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
-        <a href="usuario-cadastra.php"> Cadastre-se </a>
+        <a href="cadastro-admin.php"> Cadastre-se </a>
     </section>
     
     <footer>

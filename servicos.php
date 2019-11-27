@@ -1,3 +1,11 @@
+<?php 
+include_once 'classes/autoload.php';
+
+$servicoDao = new ServicoDao();
+$lista = $servicoDao->select();
+?>
+
+
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -39,38 +47,23 @@
     <section id="sv"> 
         <h2> Serviços </h2>
         <div class="row" id="containerservices">
+        <?php foreach($lista as $serv): ?>
             <div>
-                <img src="assets/img/port.png" class="imgserviço" height="100px">
-                <h3> Nome serviço </h3>
-                <p> esse serviço consiste em abobrinha e cebolinha e fazer sites </p>
+                <img src="admin/assets/img/icone/<?php echo $serv->getImagem(); ?>" class="imgserviço" height="100px">
+                <h3> <?php echo $serv->getTitulo(); ?> </h3>
+                <p> <?php echo $serv->getSubtitulo(); ?> </p>
             </div>
-            <div>
-                <img src="assets/img/port.png" class="imgserviço" height="100px">
-                <h3> Nome serviço </h3>
-                <p> esse serviço consiste em abobrinha e cebolinha e fazer sites </p>
-            </div>
-            <div>
-                <img src="assets/img/port.png" class="imgserviço" height="100px">
-                <h3> Nome serviço </h3>
-                <p> esse serviço consiste em abobrinha e cebolinha e fazer sites </p>
-            </div>
+        <?php endforeach; ?> 
         </div>
         
-        <div class="itemservice">
-            <h3>Nome serviço</h3>
-            <p> EXPLICAÇÃO EXTENSA E DETALHADA SOBRE O SERVIÇO QUE VAI SER PRESTADO JÁ QUE ISSO AQUI NÃO É UMA FEIRINHA,
-                SIM UMA MAQUINA FURIOSA DE SITES PQ A VIDA FUNCIONA ASSIM TAOKEI?</p>
         </div>
+        
+        <?php foreach($lista as $serv): ?>
         <div class="itemservice">
-            <h3>Nome serviço</h3>
-            <p> EXPLICAÇÃO EXTENSA E DETALHADA SOBRE O SERVIÇO QUE VAI SER PRESTADO JÁ QUE ISSO AQUI NÃO É UMA FEIRINHA,
-                SIM UMA MAQUINA FURIOSA DE SITES PQ A VIDA FUNCIONA ASSIM TAOKEI?</p>
+            <h3><?php echo $serv->getTitulo(); ?> </h3>
+            <p> <?php echo $serv->getDescricao(); ?></p>
         </div>
-        <div class="itemservice">
-            <h3>Nome serviço</h3>
-            <p> EXPLICAÇÃO EXTENSA E DETALHADA SOBRE O SERVIÇO QUE VAI SER PRESTADO JÁ QUE ISSO AQUI NÃO É UMA FEIRINHA,
-                SIM UMA MAQUINA FURIOSA DE SITES PQ A VIDA FUNCIONA ASSIM TAOKEI?</p>
-        </div>
+        <?php endforeach; ?> 
     </section>
     
     

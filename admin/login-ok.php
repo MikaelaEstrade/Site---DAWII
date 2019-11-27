@@ -11,7 +11,7 @@ if (isset($_POST['password']) && isset($_POST['email'])
     $login = $login->verificaLogin($usuario);
     
     if($login){
-        header('Location:home.php');
+        header('Location:mensagem-lista.php');
     } else {
         header('Location:login.php');
     }

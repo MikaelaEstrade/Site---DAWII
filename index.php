@@ -1,3 +1,15 @@
+<?php 
+include_once 'classes/autoload.php';
+
+$portfolioDao = new PortfolioDao();
+$listap = $portfolioDao->select();
+
+$servicoDao = new ServicoDao();
+$listas = $servicoDao->select();
+
+$curriculoDao = new CurriculoDao();
+$listac = $curriculoDao->select();
+?>
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -39,21 +51,13 @@
     <section id="sv"> 
         <h2> Serviços </h2>
         <div class="row" id="containerservices">
+            <?php foreach($listas as $serv): ?>
             <div>
-                <img src="assets/img/port.png" class="imgserviço" height="100px">
-                <h3> Nome serviço </h3>
-                <p> esse serviço consiste em abobrinha e cebolinha e fazer sites </p>
+                <img src="admin/assets/img/icone/<?php echo $serv->getImagem();?>" class="imgserviço" height="100px">
+                <h3> <?php echo $serv->getTitulo();?> </h3>
+                <p>  <?php echo $serv->getSubtitulo();?>s </p>
             </div>
-            <div>
-                <img src="assets/img/port.png" class="imgserviço" height="100px">
-                <h3> Nome serviço </h3>
-                <p> esse serviço consiste em abobrinha e cebolinha e fazer sites </p>
-            </div>
-            <div>
-                <img src="assets/img/port.png" class="imgserviço" height="100px">
-                <h3> Nome serviço </h3>
-                <p> esse serviço consiste em abobrinha e cebolinha e fazer sites </p>
-            </div>
+            <?php endforeach; ?>
             
         </div>
          <a href="servicos.html"> <button class="button"> Ver mais </button> </a>
@@ -61,18 +65,12 @@
     
     <!-- PORTFÓLIO -->
     <section id="pt">
-        <h2> Portfólio </h2>
-        
+         <h2> Portfólio </h2>
         <div class="row">
-            <img src="assets/img/port.png" width="200px"/>
-            <img src="assets/img/port.png" width="200px"/>
-            <img src="assets/img/port.png" width="200px"/>
+            <?php foreach($listap as $port): ?>
+            <img src="admin/assets/img/imagem/<?php echo $port->getSrc();?>" width="200px"/>
+            <?php endforeach; ?>
         </div> 
-        <div class="row">
-            <img src="assets/img/port.png" width="200px"/>
-            <img src="assets/img/port.png" width="200px"/>
-            <img src="assets/img/port.png" width="200px"/>
-        </div>
 
     <!--https://codepen.io/wtricks/pen/KogvBY--> 
          <a href="portfolio.html"> <button class="button"> Ver mais </button> </a>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Nov-2019 às 19:04
--- Versão do servidor: 10.3.15-MariaDB
--- versão do PHP: 7.3.6
+-- Generation Time: Nov 27, 2019 at 04:18 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `markaela`
+-- Database: `markaela`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `curriculo`
+-- Table structure for table `curriculo`
 --
 
 CREATE TABLE `curriculo` (
@@ -37,7 +37,7 @@ CREATE TABLE `curriculo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `curriculo`
+-- Dumping data for table `curriculo`
 --
 
 INSERT INTO `curriculo` (`id`, `empresa`, `local`, `funcao`, `periodo`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `curriculo` (`id`, `empresa`, `local`, `funcao`, `periodo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mensagem`
+-- Table structure for table `mensagem`
 --
 
 CREATE TABLE `mensagem` (
@@ -59,16 +59,17 @@ CREATE TABLE `mensagem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `mensagem`
+-- Dumping data for table `mensagem`
 --
 
 INSERT INTO `mensagem` (`id`, `nome`, `email`, `telefone`, `assunto`, `texto`) VALUES
-(1, 'Teste', 'mkestrade@gmail.com', '123123', '412312412', 'asdafa');
+(1, 'Teste', 'mkestrade@gmail.com', '123123', '412312412', 'asdafa'),
+(2, 'lalal', 'lalala@gmai.com', 'lalalalal', 'asdhuash', 'auhsduahdusfhuashd');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `portfolio`
+-- Table structure for table `portfolio`
 --
 
 CREATE TABLE `portfolio` (
@@ -78,30 +79,40 @@ CREATE TABLE `portfolio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `portfolio`
+-- Dumping data for table `portfolio`
 --
 
 INSERT INTO `portfolio` (`id`, `src`, `descricao`) VALUES
-(2, 'Capturar.PNG', '12312312323123'),
-(3, 'Capturar.PNG', '123123123');
+(2, 'Capturar.PNG', '123120'),
+(3, 'Capturar.PNG', '123123123'),
+(4, 'Captura de Tela (14).png', 'zaaaaaaaaaaaaa');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `servico`
+-- Table structure for table `servico`
 --
 
 CREATE TABLE `servico` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `titulo` text NOT NULL,
+  `subtitulo` int(11) NOT NULL,
   `descricao` text NOT NULL,
   `imagem` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `servico`
+--
+
+INSERT INTO `servico` (`id`, `titulo`, `subtitulo`, `descricao`, `imagem`) VALUES
+(1, 'aaaaaaaaa', 0, 'aaaaaaaaaaaa', 'Captura de Tela (14).png'),
+(2, 'aaaaaaaaaaaa', 0, 'aaaaaaaaaaaaaaaaaaa', 'Captura de Tela (15).png');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -112,7 +123,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `senha`, `email`) VALUES
@@ -120,69 +131,69 @@ INSERT INTO `usuario` (`id`, `nome`, `senha`, `email`) VALUES
 (5, 'Admin', '123', 'admin@admin.com');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `curriculo`
+-- Indexes for table `curriculo`
 --
 ALTER TABLE `curriculo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `mensagem`
+-- Indexes for table `mensagem`
 --
 ALTER TABLE `mensagem`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `portfolio`
+-- Indexes for table `portfolio`
 --
 ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `servico`
+-- Indexes for table `servico`
 --
 ALTER TABLE `servico`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `curriculo`
+-- AUTO_INCREMENT for table `curriculo`
 --
 ALTER TABLE `curriculo`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `mensagem`
+-- AUTO_INCREMENT for table `mensagem`
 --
 ALTER TABLE `mensagem`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `portfolio`
+-- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `servico`
+-- AUTO_INCREMENT for table `servico`
 --
 ALTER TABLE `servico`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;

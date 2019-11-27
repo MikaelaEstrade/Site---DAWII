@@ -54,7 +54,7 @@ class MensagemDao extends Db implements InterfaceDao {
             $mensagem->setTexto($linha['texto']);
             $mensagem->setId($linha['id']);
 
-            $mensagems[] = $mensagem;
+            $mensagens[] = $mensagem;
         }
         return $mensagens;
     }

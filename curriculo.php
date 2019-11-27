@@ -1,3 +1,10 @@
+<?php 
+include_once 'classes/autoload.php';
+
+$curriculoDao = new CurriculoDao();
+$lista = $curriculoDao->select();
+?>
+
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -44,41 +51,17 @@
             <p> abobrinha freelancer </p> 
         </div>
         
+        <?php foreach($lista as $curr): ?>
         <div class="itemcurriculo">
-            <h3> Fazedor de nada na empresa abobrinha </h3>
+            <h3><?php echo $curr->getEmpresa(); ?></h3>
             <ul style="list-style-type:disc;">
-                <li>Empresa abobrinha é localizada na horta</li>
-                <li>Período de 2 anos</li>
-                <li>Fazia nada e mais um pouquinho de nada</li>
+                <li><?php echo $curr->getLocal(); ?></li>
+                <li><?php echo $curr->getFuncao(); ?></li>
+                <li><?php echo $curr->getPeriodo(); ?></li>
             </ul>  
         </div>        
-        
-        <div class="itemcurriculo">
-            <h3> Fazedor de nada na empresa abobrinha </h3>
-            <ul style="list-style-type:disc;">
-                <li>Empresa abobrinha é localizada na horta</li>
-                <li>Período de 2 anos</li>
-                <li>Fazia nada e mais um pouquinho de nada</li>
-            </ul>  
-        </div>        
-        
-        <div class="itemcurriculo">
-            <h3> Fazedor de nada na empresa abobrinha </h3>
-            <ul style="list-style-type:disc;">
-                <li>Empresa abobrinha é localizada na horta</li>
-                <li>Período de 2 anos</li>
-                <li>Fazia nada e mais um pouquinho de nada</li>
-            </ul>  
-        </div>
-        
-        <div class="itemcurriculo">
-            <h3> Fazedor de nada na empresa abobrinha </h3>
-            <ul style="list-style-type:disc;">
-                <li>Empresa abobrinha é localizada na horta</li>
-                <li>Período de 2 anos</li>
-                <li>Fazia nada e mais um pouquinho de nada</li>
-            </ul>  
-        </div>
+        <?php endforeach; ?> 
+
     </section>
     
     <section id="fc">

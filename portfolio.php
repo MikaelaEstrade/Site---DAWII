@@ -1,3 +1,10 @@
+<?php 
+include_once 'classes/autoload.php';
+
+$portfolioDao = new PortfolioDao();
+$listap = $portfolioDao->select();
+
+?>
 <html>
     <head><title> MARKAELA </title>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -40,18 +47,12 @@
         <h2> Portfólio </h2>
         
         <div class="row">
-            <img src="assets/img/port.png" width="220px"/>
-            <img src="assets/img/port.png" width="220px"/>
-            <img src="assets/img/port.png" width="220px"/>
+             <?php foreach($listap as $port): ?>
+            <img src="admin/assets/img/imagem/<?php echo $port->getSrc();?>" width="200px"/>
+            <?php endforeach; ?>
         </div>        
-        <div class="row">
-            <img src="assets/img/port.png" width="220px"/>
-            <img src="assets/img/port.png" width="220px"/>
-            <img src="assets/img/port.png" width="220px"/>
-        </div>
         
     <!--https://codepen.io/wtricks/pen/KogvBY--> 
-        <button class="button"> Carregar mais </button>
     </section>
     
     <section id="fc">
